@@ -3,7 +3,7 @@
 A running record of how this game was built: every request, what was done about it, problems hit along the way, and reference material. **Updated after every request.** The newest entry is at the bottom of the prompt log.
 
 - **Project folder:** `AI/npc_village` (Godot 4.7, GDScript)
-- **Last updated:** 2026-09-29, after prompt 16
+- **Last updated:** 2026-09-29, after prompt 17
 - **Companion doc:** `npc-village-design.md` (game design summary)
 
 ---
@@ -600,6 +600,28 @@ A running record of how this game was built: every request, what was done about 
 
 ---
 
+### 17. A playable .exe (2026-09-29, 11:16 PM)
+> is there a way to turn the game into an exe or make it easier to play?
+
+(Between 16 and 17 the project was also put on GitHub: https://github.com/LJAguil/Npc-Village.)
+
+**Done:**
+- **Windows and Linux builds**, exported with Godot 4.7's release templates.
+  - Each is a single file with the game packed inside, so it runs with a double-click and no Godot install.
+  - They're published as **v1.0** on the GitHub Releases page: `NPC-Village-Windows.zip` (about 40 MB) and `NPC-Village-Linux.zip`, each with a short README.txt.
+- **`export_presets.cfg`**: saved export settings for Windows Desktop and Linux, so you can make a new .exe from the editor with Project > Export.
+- **A game icon** (`icon.png` / `icon.ico`: a cottage, a tree and a little robot villager). It's used for the window and for the .exe in Explorer.
+- **README**: a "Play it" section (download, unzip, run; what to do about the Windows SmartScreen warning) and "Making a new .exe".
+
+**Checks:** the Linux build was run on its own and reaches the title screen with no script errors (screenshot checked). The Windows build contains all the imported sounds and compiled scripts.
+
+**Notes:**
+- The .exe isn't code-signed, so Windows SmartScreen warns the first time ("More info" > "Run anyway").
+- Saves go to the same folder as when playing from the editor.
+- A browser version isn't possible as an artifact page: Godot's web engine file alone is about 40 MB, over the page-size limit.
+
+---
+
 ## How to run
 1. **Close Godot before copying new files in.** If it asks to save, say no. Otherwise it may save old scripts over the new ones.
 2. Open the project in Godot 4.7 and press **F5**.
@@ -779,6 +801,8 @@ A running record of how this game was built: every request, what was done about 
 - **Remove a thing's interaction spot along with it.** Forage finds were freed each morning but their "press E" spots weren't, leaving invisible prompts behind. Anything with a spot stores it (`set_meta("spot", ...)`) and is removed with `_free_with_spot()`.
 - **Rebuilding a window can reset its own flags.** When a panel reopens itself (switching tabs), the old copy's `tree_exiting` fires after the new one opened; check that it's still the current window before clearing "is open".
 - **Check that 3D text fits.** `Label3D.get_aabb()` gives the text's real width, so tests can catch signs whose words run off the board.
+
+- **Export templates can be fetched piece by piece.** The full 4.7 template bundle is 1.3 GB; reading the zip's directory with HTTP range requests and pulling only the Windows/Linux templates avoids downloading it all.
 
 ## Known limitations and ideas
 - Audio hasn't been listened to (it was generated and tested headless). Adjust with the pause-menu sliders if needed.

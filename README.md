@@ -4,7 +4,23 @@ A small cozy village game: farm, fish, help your neighbors with their problems,
 and raise money for the Harvest Festival to win. Villagers wander, chat with
 each other, pass along hints, spread news about you, and go home at night.
 
-## Running it
+## Play it (no Godot needed)
+1. Go to the [**Releases**](https://github.com/LJAguil/Npc-Village/releases/latest) page and download
+   **NPC-Village-Windows.zip** (or the Linux one).
+2. Unzip it anywhere and double-click **NPC Village.exe**.
+3. Windows may say "Windows protected your PC" because the game isn't signed by a
+   company. Click **More info**, then **Run anyway**.
+
+Your save file is kept in `%APPDATA%\Godot\app_userdata\NPC Village\`, the same
+place the Godot editor uses, so progress carries over between the two.
+
+## Making a new .exe
+Open the project in Godot 4.7 and choose **Project > Export > Windows Desktop >
+Export Project**. The export settings are already saved in `export_presets.cfg`.
+The first time, Godot asks you to download the export templates (**Editor >
+Manage Export Templates > Download and Install**).
+
+## Running it from the editor
 Open the project in Godot 4 (tested with 4.7), press **F5**.
 The first time, Godot needs a few seconds to import the models and sounds.
 **After copying in new files, restart Godot** (or use Project > Reload Current
