@@ -608,7 +608,7 @@ A running record of how this game was built: every request, what was done about 
 **Done:**
 - **Windows and Linux builds**, exported with Godot 4.7's release templates.
   - Each is a single file with the game packed inside, so it runs with a double-click and no Godot install.
-  - They're published as **v1.0** on the GitHub Releases page: `NPC-Village-Windows.zip` (about 40 MB) and `NPC-Village-Linux.zip`, each with a short README.txt.
+  - They're on a separate **`downloads`** branch of the GitHub repo, linked from the README: `NPC-Village-Windows.zip` (about 40 MB) and `NPC-Village-Linux.zip`, each with a short README.txt. (This session isn't allowed to create GitHub Releases, and the zip is too big to attach in chat.)
 - **`export_presets.cfg`**: saved export settings for Windows Desktop and Linux, so you can make a new .exe from the editor with Project > Export.
 - **A game icon** (`icon.png` / `icon.ico`: a cottage, a tree and a little robot villager). It's used for the window and for the .exe in Explorer.
 - **README**: a "Play it" section (download, unzip, run; what to do about the Windows SmartScreen warning) and "Making a new .exe".

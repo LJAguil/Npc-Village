@@ -5,8 +5,8 @@ and raise money for the Harvest Festival to win. Villagers wander, chat with
 each other, pass along hints, spread news about you, and go home at night.
 
 ## Play it (no Godot needed)
-1. Go to the [**Releases**](https://github.com/LJAguil/Npc-Village/releases/latest) page and download
-   **NPC-Village-Windows.zip** (or the Linux one).
+1. Download [**NPC-Village-Windows.zip**](https://github.com/LJAguil/Npc-Village/raw/downloads/NPC-Village-Windows.zip)
+   (or the [Linux one](https://github.com/LJAguil/Npc-Village/raw/downloads/NPC-Village-Linux.zip)).
 2. Unzip it anywhere and double-click **NPC Village.exe**.
 3. Windows may say "Windows protected your PC" because the game isn't signed by a
    company. Click **More info**, then **Run anyway**.
