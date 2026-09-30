@@ -1,0 +1,10 @@
+# Godot 4 cache and editor data (rebuilt automatically when you open the project)
+.godot/
+# Exported builds
+/build/
+/export/
+*.tmp
+# OS clutter
+.DS_Store
+Thumbs.db
+desktop.ini
